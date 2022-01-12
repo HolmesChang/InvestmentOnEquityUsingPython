@@ -6,6 +6,8 @@ import yfinance as yf
 URL_YTWF_Main = r"https://tw.stock.yahoo.com"
 Token_YTWF_Quote = r"quote"
 URL_YTWF_Quote = URL_YTWF_Main + r"/" + Token_YTWF_Quote + r"/{}"
+symbol = ""
+stock = None
 
 def GetRealTimePrice (Symbol: str) -> float:
     try:
@@ -28,7 +30,12 @@ def GetRealTimePrice (Symbol: str) -> float:
     return price
 
 def GetHistoryPriceANDVolume (Symbol: str, Interval: str="1d", Start: str=None, End: str=None, Period: str="1mo"):
-    stock = yf.Ticker(Symbol)
+    global symbol
+    global stock
+
+    if (Symbol != symbol):
+        symbol = Symbol
+        stock = yf.Ticker(Symbol)
 
     data = stock.history(period=Period, interval=Interval, start=Start, end=End)
 
@@ -36,3 +43,19 @@ def GetHistoryPriceANDVolume (Symbol: str, Interval: str="1d", Start: str=None, 
     volume = data.iloc[:, 4]
 
     return (price, volume)
+
+def GetHistoryNAV ():
+    pass
+
+def GetHistoryEPS ():
+    pass
+
+def GetHistoryROE ():
+    pass
+
+def GetHistoryCDR ():
+    pass
+
+def GetHistorySDR ():
+    pass
+
