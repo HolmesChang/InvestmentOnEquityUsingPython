@@ -1,9 +1,31 @@
+# ================================================== #
+#   Importation Of Default Module
+# ================================================== #
 from typing import List
 from datetime import datetime
-import requests
 import io
+
+# ================================================== #
+#   Importation of 3rd Party Module
+# ================================================== #
+import requests
 import pandas as pd
 
+# ================================================== #
+#   Importation of Self Devleopment Module
+# ================================================== #
+
+# ================================================== #
+#   Declaration AND Definition Of This Module Variable
+# ================================================== #
+
+# ================================================== #
+#   Declaration AND Definition Of This Module Funciton
+# ================================================== #
+
+# ================================================== #
+#   Declaration AND Definition Of This Module Class
+# ================================================== #
 class TradingDay ():
     def __init__ (self,
                   URLTemplate: str=r"https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=csv&queryYear={}",
@@ -76,6 +98,9 @@ class TradingDay ():
         
         return True
 
+# ================================================== #
+#   Testing Of This Module
+# ================================================== #
 if (__name__ == "__main__"):
     ObjTradingDay = TradingDay()
     TradingHoliday = ObjTradingDay.GetTradingHoliday()

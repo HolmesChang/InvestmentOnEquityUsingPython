@@ -1,12 +1,27 @@
+# ================================================== #
+#   Importation Of Default Module
+# ================================================== #
 from typing import List
 
+# ================================================== #
+#   Importation Of 3rd Party Module
+# ================================================== #
 import smtplib
-
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 
+# ================================================== #
+#   Importation Of Self Development Module
+# ================================================== #
 
+# ================================================== #
+#   Declaration AND Definition Of This Module Variable
+# ================================================== #
+
+# ================================================== #
+#   Declaration AND Definition Of This Module Fucntion
+# ================================================== #
 def SendMail (smtp_server: str="", smtp_port: int=None, source_addr: str="", pw: str="", destination_addr: List[str]=[], subject: str="",
               message: str="", attachment: List[List[str]]=[]):
     content = MIMEMultipart()
@@ -49,6 +64,13 @@ def SendMail (smtp_server: str="", smtp_port: int=None, source_addr: str="", pw:
 
     server.quit()
 
+# ================================================== #
+#   Declaration AND Definition Of This Module Class
+# ================================================== #
+
+# ================================================== #
+#   Testing Of This Module
+# ================================================== #
 if (__name__ == "__main__"):
     source_addr = input("Please Input Your eMail: ")
     pw = input("Please Input You Password: ")

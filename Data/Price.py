@@ -1,14 +1,32 @@
+# ================================================== #
+#   Importation Of Default Module
+# ================================================== #
+from datetime import datetime
+
+# ================================================== #
+#   Importation Of 3rd Party Module
+# ================================================== #
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 import yfinance as yf
 
+# ================================================== #
+#   Importation Of Self Development Module
+# ================================================== #
+
+# ================================================== #
+#   Declaration AND Definition Of This Module Variable
+# ================================================== #
 URL_YTWF_Main = r"https://tw.stock.yahoo.com"
 Token_YTWF_Quote = r"quote"
 URL_YTWF_Quote = URL_YTWF_Main + r"/" + Token_YTWF_Quote + r"/{}"
 symbol = ""
 stock = None
 
+# ================================================== #
+#   Declaration AND Definition Of This Module Function
+# ================================================== #
 def GetRealTimePrice (Symbol: str) -> float:
     try:
         response = requests.get(URL_YTWF_Quote.format(Symbol))
@@ -53,9 +71,21 @@ def GetHistoryEPS ():
 def GetHistoryROE ():
     pass
 
+def GetHistoryCashDividend ():
+    pass
+
 def GetHistoryCDR ():
     pass
 
 def GetHistorySDR ():
     pass
 
+# ================================================== #
+#   Declaration AND Definition Of This Module Class
+# ================================================== #
+
+# ================================================== #
+#   Testing Of This Module
+# ================================================== #
+if (__name__ == "__main__"):
+    pass
